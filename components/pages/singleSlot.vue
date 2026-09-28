@@ -18,11 +18,11 @@
         <slot_tags_block title="Features" :items="featureTags" variant="aside" />
       </div>
     </div>
+    <page_content :text="pageContent" :toc="pageToc" />
     <slot_games_grid
       :title="`Best ${providerTitle} Games`"
       :posts="relativeSlots"
     />
-    <page_content :text="pageContent" />
   </main>
 </template>
 
@@ -62,6 +62,7 @@ const gameStatsRows = ref([]);
 const themeTags = ref([]);
 const featureTags = ref([]);
 const pageContent = ref("");
+const pageToc = ref([]);
 const breadcrumb = ref([]);
 const publishedAt = ref("");
 const updatedAt = ref("");
@@ -111,6 +112,7 @@ const {
   themes,
   features,
   content,
+  toc,
   short_desc,
   created_at,
   updated_at,
@@ -125,6 +127,7 @@ titleSlot.value = title || "";
 providerTitle.value = prov?.title || "";
 relativeSlots.value = slots || [];
 pageContent.value = content || "";
+pageToc.value = Array.isArray(toc) ? toc : [];
 publishedAt.value = created_at || "";
 updatedAt.value = updated_at || "";
 shortDesc.value = short_desc || description || "";
