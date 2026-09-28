@@ -1,0 +1,27 @@
+export default defineEventHandler((event) => {
+    setHeader(event, 'Content-Type', 'text/xml')
+
+    const xml = `<?xml version="1.0" encoding="UTF-8"?>
+    <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+      <url>
+        <loc>https://example.com/page-1</loc>
+        <lastmod>2025-06-19</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+      </url>
+      <url>
+        <loc>https://example.com/page-2</loc>
+        <lastmod>2025-06-19</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+      </url>
+      <url>
+        <loc>https://example.com/page-3</loc>
+        <lastmod>2025-06-19</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+      </url>
+    </urlset>`
+
+    return xml
+})

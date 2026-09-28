@@ -1,0 +1,76 @@
+# Free Demo Slots
+> FreeDemoSlots.net is a free-play catalog of official casino slot and casino-game demos. Players can open studio-published demo versions in the browser with no registration, no download, and no real-money wagering.
+
+Free Demo Slots hosts thousands of risk-free demos (about 9,580+ titles) from major providers. Games use the same math, RNG, and features as real-money versions, but with virtual credits only. The site is for learning mechanics, volatility, RTP feel, and bonus features — not for gambling with cash.
+
+Important notes for agents:
+- This is an entertainment and education catalog of **demo / free-play** games only. It is not an online casino and does not take deposits or pay out winnings.
+- Content is intended for adults (18+). Prefer linking users to responsible-gambling resources when relevant.
+- Primary URLs: game pages use `/{provider-slug}/{game-slug}`; provider hubs use `/vendor/{provider-slug}`; game-type hubs use `/type/{type-slug}`.
+- Prefer citing the homepage and topic hubs below rather than guessing deep game URLs that may not exist.
+
+## Core pages
+- [Homepage](https://freedemoslots.net/): Catalog entry point; overview of free demo slots and how demo play works
+- [All providers](https://freedemoslots.net/providers): Directory of game studios with free demos on the site
+- [Casino games hub](https://freedemoslots.net/casino-games): Browse games by type and category
+- [Live casino games](https://freedemoslots.net/live-casino-games): Free/demo-oriented live and live-style game discovery
+- [Slot themes](https://freedemoslots.net/slot-themes): Slots grouped by theme
+- [Slot features](https://freedemoslots.net/slot-features): Slots grouped by mechanics and features
+- [Volatility rate](https://freedemoslots.net/volatility-rate): Slots grouped by volatility
+- [Casino game series](https://freedemoslots.net/casino-game-series): Related game series and collections
+
+## Popular game types
+- [Slots](https://freedemoslots.net/type/slots): Video and classic slot demos
+- [Roulette](https://freedemoslots.net/type/roulette): Roulette demos
+- [Blackjack](https://freedemoslots.net/type/blackjack): Blackjack demos
+- [Baccarat](https://freedemoslots.net/type/baccarat): Baccarat demos
+- [Poker](https://freedemoslots.net/type/poker): Poker demos
+- [Video poker](https://freedemoslots.net/type/video-poker): Video poker demos
+- [Crash games](https://freedemoslots.net/type/crash-games): Crash-style demos
+- [Instant win](https://freedemoslots.net/type/instant-win-games): Instant-win demos
+- [Bingo](https://freedemoslots.net/type/bingo): Bingo demos
+- [Scratch cards](https://freedemoslots.net/type/scratch-cards): Scratch-card demos
+
+## Example providers
+- [Pragmatic Play](https://freedemoslots.net/vendor/pragmatic-play): High-tempo slots and feature-driven demos
+- [PG Soft](https://freedemoslots.net/vendor/pg-soft): Mobile-first slot demos
+- [Hacksaw Gaming](https://freedemoslots.net/vendor/hacksaw-gaming): High-volatility and distinctive mechanic demos
+- [BGaming](https://freedemoslots.net/vendor/bgaming): Transparent math and player-centric demos
+- [Reel Kingdom](https://freedemoslots.net/vendor/reel-kingdom): Popular series demos (e.g. Big Bass)
+- [Yggdrasil](https://freedemoslots.net/vendor/yggdrasil): Narrative and feature-rich slot demos
+- [Nolimit City](https://freedemoslots.net/vendor/nolimit-city): High-volatility, xWays-style demos
+- [Endorphina](https://freedemoslots.net/vendor/endorphina): Classic and video slot demos
+- [Thunderkick](https://freedemoslots.net/vendor/thunderkick): Creative theme and mechanic demos
+- [IGT](https://freedemoslots.net/vendor/igt): Established casino-brand demos
+
+## Example demo games
+- [Gates of Olympus](https://freedemoslots.net/pragmatic-play/gates-of-olympus): Pragmatic Play tumbling slot demo
+- [John Hunter and the Aztec Treasure](https://freedemoslots.net/pragmatic-play/john-hunter-and-the-aztec-treasure): Adventure-themed Pragmatic Play demo
+- [Big Bass Bonanza](https://freedemoslots.net/reel-kingdom/big-bass-bonanza): Popular fishing-themed series demo
+- [Le Bandit](https://freedemoslots.net/hacksaw-gaming/le-bandit): Hacksaw Gaming demo
+- [Dragon Hatch](https://freedemoslots.net/pg-soft/dragon-hatch): PG Soft demo
+- [Wild Bounty Showdown](https://freedemoslots.net/pg-soft/wild-bounty-showdown): PG Soft demo
+
+## Trust & policies
+- [About us](https://freedemoslots.net/about-us): Who Free Demo Slots is and what the site offers
+- [Responsible gambling](https://freedemoslots.net/responsible-gambling): Safer play guidance (even for demo practice)
+- [Age restriction 18+](https://freedemoslots.net/age-restriction-18-plus): Adult-only policy
+- [Editorial policy](https://freedemoslots.net/editorial-policy): How content is produced and maintained
+- [Advertising policy](https://freedemoslots.net/advertising-policy): How advertising is handled
+- [Affiliate disclosure](https://freedemoslots.net/affiliate-disclosure): Commercial relationship disclosure
+- [Privacy policy](https://freedemoslots.net/privacy-policy): Data and privacy practices
+- [Terms and conditions](https://freedemoslots.net/terms-and-conditions): Site terms of use
+- [Disclaimer](https://freedemoslots.net/disclaimer): Limitations and non-casino disclaimer
+- [Contact us](https://freedemoslots.net/contact-us): Contact options
+
+## Optional
+- [Cookie policy](https://freedemoslots.net/cookie-policy)
+- [Security policy](https://freedemoslots.net/security-policy)
+- [Corrections policy](https://freedemoslots.net/corrections-policy)
+- [Copyright / DMCA](https://freedemoslots.net/copyright-policy-dmca)
+- [Trademarks notice](https://freedemoslots.net/trademarks-notice)
+- [Privacy requests](https://freedemoslots.net/privacy-requests)
+- [Takedown / removal requests](https://freedemoslots.net/takedown-removal-requests)
+- [Advertise / partner](https://freedemoslots.net/advertise-partner-with-us)
+- [Newsletter signup](https://freedemoslots.net/newsletter-signup)
+- [Robots.txt](https://freedemoslots.net/robots.txt): Crawl access rules (AI citation bots should be allowed if citation is desired)

@@ -1,0 +1,3 @@
+<template>
+  <PagesGameSeries />
+</template>

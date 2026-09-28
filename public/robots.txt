@@ -1,0 +1,30 @@
+User-agent: *
+Allow: /
+
+Disallow: /admin
+Disallow: /admin/
+Disallow: /api
+Disallow: /api/
+Disallow: /search
+Disallow: /search/
+Disallow: /*?s=
+Disallow: /cdn-cgi/
+Disallow: /go
+Disallow: /go/
+Disallow: /out
+Disallow: /out/
+Disallow: /redirect
+Disallow: /redirect/
+Disallow: /exit
+Disallow: /exit/
+
+User-agent: CCBot
+Disallow: /
+
+User-agent: Bytespider
+Disallow: /
+
+User-agent: meta-externalagent
+Disallow: /
+
+Sitemap: https://freedemoslots.net/sitemap.xml
