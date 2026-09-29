@@ -11,6 +11,7 @@
         />
         <div class="game_intro__body">
           <h1 v-if="title" class="game_intro__title">{{ title }}</h1>
+          <p v-if="ratingText" class="game_intro__rating">{{ ratingText }}</p>
           <p v-if="publishedDate || updatedDate" class="game_intro__meta">
             <span v-if="publishedDate"
               >Published date: {{ publishedDate }}</span
@@ -53,6 +54,9 @@ const props = defineProps({
     type: String,
     default: "",
   },
+  rating: {
+    default: null,
+  },
 });
 
 const formatDate = (value) => {
@@ -66,6 +70,16 @@ const formatDate = (value) => {
 
 const publishedDate = computed(() => formatDate(props.published));
 const updatedDate = computed(() => formatDate(props.updated));
+
+const ratingText = computed(() => {
+  if (props.rating == null || props.rating === "") return "";
+  const value = Number(props.rating);
+  if (Number.isNaN(value)) return "";
+  const label = Number.isInteger(value)
+    ? String(value)
+    : String(parseFloat(value.toFixed(1)));
+  return `${label}/10`;
+});
 </script>
 
 <style scoped lang="scss">
@@ -104,6 +118,15 @@ const updatedDate = computed(() => formatDate(props.updated));
   font-size: 24px;
   font-weight: 600;
   line-height: 1.3;
+  color: #111;
+}
+
+.game_intro__rating {
+  margin: 0 0 10px;
+  font-family: "Unbounded", Arial, sans-serif;
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 1.2;
   color: #111;
 }
 

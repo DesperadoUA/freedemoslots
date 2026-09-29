@@ -7,6 +7,7 @@
       :published="publishedAt"
       :updated="updatedAt"
       :description="shortDesc"
+      :rating="ratingValue"
     />
     <div class="container game_row">
       <div class="game_row__left">
@@ -36,6 +37,7 @@ import {
   TYPE_SLUG,
   SITE_LANGS,
 } from "@/constants";
+import { buildReviewJsonLd } from "@/utils/jsonLd";
 
 const config = useRuntimeConfig();
 const apiUrl = config.public.apiUrl;
@@ -67,6 +69,7 @@ const breadcrumb = ref([]);
 const publishedAt = ref("");
 const updatedAt = ref("");
 const shortDesc = ref("");
+const ratingValue = ref(null);
 
 const isEmpty = (val) =>
   val === undefined || val === null || val === "" || val === "N/A";
@@ -116,6 +119,7 @@ const {
   short_desc,
   created_at,
   updated_at,
+  rating,
 } = body;
 
 const prov = provider || vendor;
@@ -131,6 +135,7 @@ pageToc.value = Array.isArray(toc) ? toc : [];
 publishedAt.value = created_at || "";
 updatedAt.value = updated_at || "";
 shortDesc.value = short_desc || description || "";
+ratingValue.value = rating ?? null;
 
 const rows = [];
 
@@ -205,9 +210,31 @@ if (prov?.title) {
 }
 breadcrumb.value.push({ title: title || "", permalink: "" });
 
+const origin = useRequestURL().origin;
+const pageUrl = origin + route.fullPath.split("?")[0];
+const reviewLd = buildReviewJsonLd({
+  name: title,
+  description: short_desc || description,
+  image: thumbnail,
+  url: pageUrl,
+  datePublished: created_at,
+  dateModified: updated_at,
+  rating,
+  origin,
+});
+
 useHead({
   title: meta_title,
   meta: [{ name: "description", content: description }],
+  script: reviewLd
+    ? [
+        {
+          key: "jsonld-review",
+          type: "application/ld+json",
+          innerHTML: JSON.stringify(reviewLd),
+        },
+      ]
+    : [],
 });
 </script>
 
