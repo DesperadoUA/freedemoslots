@@ -1,4 +1,8 @@
 export const JSON_LD_SITE_NAME = "Free Demo Slots";
+export const JSON_LD_LOGO_PATH = "/img/freedemoslots-logo.webp";
+export const JSON_LD_LOGO_WIDTH = 636;
+export const JSON_LD_LOGO_HEIGHT = 263;
+export const JSON_LD_SUPPORT_EMAIL = "support@freedemoslots.net";
 
 export function toAbsUrl(origin, path) {
   if (!path) return origin;
@@ -23,14 +27,41 @@ function compact(value) {
   return value;
 }
 
-export function buildWebSiteJsonLd({ origin, name = JSON_LD_SITE_NAME }) {
+export function buildWebSiteJsonLd({
+  origin,
+  name = JSON_LD_SITE_NAME,
+  logo,
+  logoWidth = JSON_LD_LOGO_WIDTH,
+  logoHeight = JSON_LD_LOGO_HEIGHT,
+  email = JSON_LD_SUPPORT_EMAIL,
+}) {
   if (!origin) return null;
+
+  const logoUrl = logo || toAbsUrl(origin, JSON_LD_LOGO_PATH);
+
   return compact({
     "@context": "https://schema.org",
     "@type": "WebSite",
     "@id": `${origin}/#website`,
     url: `${origin}/`,
     name,
+    publisher: {
+      "@type": "Organization",
+      "@id": `${origin}/#organization`,
+      name,
+      url: `${origin}/`,
+      logo: {
+        "@type": "ImageObject",
+        url: logoUrl,
+        width: logoWidth,
+        height: logoHeight,
+      },
+      contactPoint: {
+        "@type": "ContactPoint",
+        contactType: "customer support",
+        email,
+      },
+    },
   });
 }
 
