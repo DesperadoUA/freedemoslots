@@ -2,44 +2,30 @@
   <nav v-if="value?.length" class="breadcrumbs" aria-label="Breadcrumb">
     <div class="breadcrumbs__inner">
       <div class="wrapper">
-        <ol
-          itemscope
-          itemtype="https://schema.org/BreadcrumbList"
-          class="breadcrumb-list"
-        >
+        <ol class="breadcrumb-list">
           <li
             v-for="(item, index) in value"
             :key="index"
-            itemprop="itemListElement"
-            itemscope
-            itemtype="https://schema.org/ListItem"
             class="breadcrumb-item"
           >
             <span
               v-if="item.permalink === ''"
-              itemprop="item"
-              itemscope
-              itemtype="https://schema.org/Thing"
               class="breadcrumb-item__current"
             >
-              <span itemprop="name">{{ item.title }}</span>
+              {{ item.title }}
             </span>
             <NuxtLink
               v-else
               :to="item.permalink"
-              itemprop="item"
-              itemscope
-              itemtype="https://schema.org/Thing"
               class="breadcrumb-item__link"
             >
-              <span itemprop="name">{{ item.title }}</span>
+              {{ item.title }}
             </NuxtLink>
             <span
               v-if="index < value.length - 1"
               class="spliter"
               aria-hidden="true"
             ></span>
-            <meta itemprop="position" :content="String(index + 1)" />
           </li>
         </ol>
       </div>
@@ -48,11 +34,35 @@
 </template>
 
 <script setup>
-defineProps({
+import { buildBreadcrumbJsonLd } from "@/utils/jsonLd";
+
+const props = defineProps({
   value: {
     type: Array,
     default: () => [],
   },
+});
+
+const origin = useRequestURL().origin;
+const route = useRoute();
+
+useHead(() => {
+  const pageUrl = origin + route.fullPath.split("?")[0];
+  const json = buildBreadcrumbJsonLd({
+    items: props.value,
+    origin,
+    pageUrl,
+  });
+  if (!json) return {};
+  return {
+    script: [
+      {
+        key: "jsonld-breadcrumb",
+        type: "application/ld+json",
+        innerHTML: JSON.stringify(json),
+      },
+    ],
+  };
 });
 </script>
 
