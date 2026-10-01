@@ -1,11 +1,27 @@
 <script setup>
 import { PLAY_REAL_REF } from "@/constants";
 
-const props = defineProps({
+defineProps({
   thumbnail: String,
   demo: String,
   title: String,
 });
+
+const config = useRuntimeConfig();
+const apiUrl = config.public.apiUrl;
+
+const { data: settingsData } = await useFetch(`${apiUrl}/en/settings`, {
+  key: "settings-en",
+});
+
+const playRealRef = computed(() => {
+  const row = (settingsData.value?.body || []).find(
+    (item) => item.key === "play_real_ref"
+  );
+  const value = typeof row?.value === "string" ? row.value.trim() : "";
+  return value || PLAY_REAL_REF;
+});
+
 const show = ref(false);
 function play() {
   show.value = true;
@@ -28,9 +44,9 @@ function close() {
           Play for Free
         </button>
         <a
-          v-if="PLAY_REAL_REF"
+          v-if="playRealRef"
           class="demo-block__real-btn"
-          :href="PLAY_REAL_REF"
+          :href="playRealRef"
           target="_blank"
           rel="noopener noreferrer"
         >
